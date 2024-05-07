@@ -25,9 +25,7 @@ public class ArrayStack {
     }
 
     public int pop() {
-        int val = peek();
-        stack.remove(size() - 1);
-        return val;
+        return stack.remove(size() - 1);
     }
 
     public int peek() {
