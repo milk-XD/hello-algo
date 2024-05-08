@@ -4,7 +4,7 @@ import utils.ListNode;
 
 import java.util.Arrays;
 
-public class LinkedListQueue {
+class LinkedListQueue {
 
     private ListNode head;
     private ListNode tail;

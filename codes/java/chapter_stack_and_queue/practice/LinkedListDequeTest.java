@@ -4,7 +4,7 @@ import utils.DeListNode;
 
 import java.util.Arrays;
 
-public class LinkedListDeque {
+class LinkedListDeque {
 
     private DeListNode head;
     private DeListNode tail;

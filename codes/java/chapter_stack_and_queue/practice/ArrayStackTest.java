@@ -1,63 +1,53 @@
 package chapter_stack_and_queue.practice;
 
-import utils.ListNode;
-
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-public class LinkedListStack {
+class ArrayStack {
 
-    private ListNode head;
-    private int size;
+    private final List<Integer> stack;
 
-    public LinkedListStack() {
-        head = null;
+    public ArrayStack() {
+        stack = new ArrayList<>();
     }
 
     public int size() {
-        return size;
+        return stack.size();
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     public void push(int val) {
-        ListNode newNode = new ListNode(val);
-        newNode.next = head;
-        head = newNode;
-        size++;
+        stack.add(val);
     }
 
     public int pop() {
         int val = peek();
-        head = head.next;
-        size--;
+        stack.remove(size() - 1);
         return val;
     }
 
     public int peek() {
-        if (isEmpty()) {
+        if (size() == 0) {
             throw new IndexOutOfBoundsException();
         }
-        return head.val;
+
+        return stack.get(size() - 1);
     }
 
-    public int[] toArray() {
-        ListNode cur = head;
-        int[] res = new int[size()];
-        for (int i = size() - 1; i >= 0; i--) {
-            res[i] = cur.val;
-            cur = cur.next;
-        }
-        return res;
+    public Object[] toArray() {
+        return stack.toArray();
     }
 
 }
 
-class LinkedListStackTest {
+class ArrayStackTest {
 
     public static void main(String[] args) {
-        LinkedListStack stack = new LinkedListStack();
+        ArrayStack stack = new ArrayStack();
         System.out.println("Size: " + stack.size());
         System.out.println("Empty: " + stack.isEmpty());
         stack.push(1);
