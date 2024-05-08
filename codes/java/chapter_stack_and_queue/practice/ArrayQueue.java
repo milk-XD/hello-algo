@@ -25,7 +25,9 @@ public class ArrayQueue {
     }
 
     public int pop() {
-        return list.remove(0);
+        int val = peek();
+        list.remove(0);
+        return val;
     }
 
     public int peek() {
