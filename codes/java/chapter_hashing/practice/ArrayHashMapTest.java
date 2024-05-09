@@ -1,17 +1,9 @@
 package chapter_hashing.practice;
 
+import utils.Pair;
+
 import java.util.ArrayList;
 import java.util.List;
-
-class Pair {
-    int key;
-    String value;
-
-    public Pair(int key, String value) {
-        this.key = key;
-        this.value = value;
-    }
-}
 
 class ArrayHashMap {
     private final List<Pair> map;
@@ -24,7 +16,7 @@ class ArrayHashMap {
         }
     }
 
-    public void add(int key, String value) {
+    public void put(int key, String value) {
         Pair pair = new Pair(key, value);
         map.add(hash(key), pair);
     }
@@ -44,8 +36,8 @@ public class ArrayHashMapTest {
 
     public static void main(String[] args) {
         ArrayHashMap map = new ArrayHashMap();
-        map.add(1, "Apple");
-        map.add(2, "Banana");
+        map.put(1, "Apple");
+        map.put(2, "Banana");
         System.out.println(map.get(1));
         System.out.println(map.get(2));
         System.out.println(map.get(3));
